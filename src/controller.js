@@ -32,7 +32,7 @@ module.exports.indexAction = async (req, res) => {
 
   db.find("predictions", params)
     .then(async (result) => {
-      if (result) {
+      if (result.length !== 0) {
         if (result.length > 1) {
           var lowest = helper(
             {
